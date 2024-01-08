@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 
-function BookCard({ data: { title, author, image, language, pages } }) {
-
+function BookCard({ data, handleLileList }) {
+   const { title, author, image, language, pages } = data;
    const [like, setLike] = useState(false)
 
    const likeHandler = () => {
+      handleLileList(data, like)
       setLike(like => !like)
    }
    return (
